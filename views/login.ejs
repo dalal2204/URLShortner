@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - SMShortner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+    }
+    /* Navbar */
+    nav {
+      background: rgba(255, 255, 255, 0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    nav .logo {
+      font-size: 1.8em;
+      font-weight: 600;
+      color: #6a11cb;
+    }
+    nav .nav-buttons a {
+      margin-left: 15px;
+      font-weight: 600;
+      padding: 8px 15px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+      font-size: 0.9em;
+    }
+    nav .nav-buttons a.login {
+      color: #6a11cb;
+      border: 1px solid #6a11cb;
+    }
+    nav .nav-buttons a.login:hover {
+      background: #6a11cb;
+      color: #fff;
+    }
+    nav .nav-buttons a.signup {
+      background: #6a11cb;
+      color: #fff;
+    }
+    nav .nav-buttons a.signup:hover {
+      background: #2575fc;
+    }
+    /* Login Container */
+    .login-container {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 350px;
+      text-align: center;
+      margin: 80px auto;
+      position: relative;
+    }
+    .login-container h2 {
+      margin-bottom: 20px;
+      color: #333;
+      font-weight: 600;
+    }
+    .login-container form input[type="email"],
+    .login-container form input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      margin-right: 100px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
+    .login-container form input:focus {
+      outline: none;
+      border-color: #6a11cb;
+      box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+    }
+    .login-container form button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+      margin-top: 10px;
+    }
+    .login-container form button:hover {
+      background: linear-gradient(135deg, #2575fc, #6a11cb);
+    }
+    .forgot-password {
+      display: block;
+      margin-top: 15px;
+      font-size: 12px;
+      color: #6a11cb;
+      font-weight: 600;
+    }
+    .forgot-password:hover {
+      text-decoration: underline;
+    }
+    /* Responsive */
+    @media (max-width: 480px) {
+      nav {
+        flex-direction: column;
+        padding: 10px;
+      }
+      nav .nav-buttons {
+        margin-top: 10px;
+      }
+      .login-container {
+        width: 90%;
+        margin: 50px auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">SMShortner</div>
+    <div class="nav-buttons">
+      <a href="/login" class="login">Login</a>
+      <a href="/signin" class="signup">Signup</a>
+    </div>
+  </nav>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form action="/user/login" method="POST">
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <a href="/forgot" class="forgot-password">Forgot Password?</a>
+  </div>
+</body>
+</html>

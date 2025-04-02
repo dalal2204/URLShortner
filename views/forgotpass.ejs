@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password - SMShortner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Navbar */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .logo {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #6a11cb;
+        }
+
+        nav .nav-buttons a {
+            margin-left: 15px;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+            font-size: 0.9em;
+        }
+
+        nav .nav-buttons a.login {
+            color: #6a11cb;
+            border: 1px solid #6a11cb;
+        }
+
+        nav .nav-buttons a.login:hover {
+            background: #6a11cb;
+            color: #fff;
+        }
+
+        nav .nav-buttons a.signup {
+            background: #6a11cb;
+            color: #fff;
+        }
+
+        nav .nav-buttons a.signup:hover {
+            background: #2575fc;
+        }
+
+        /* Centering Container */
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 60px);
+            /* Adjust for navbar height */
+            padding: 20px;
+        }
+
+        /* Forgot Password Container */
+        .forgot-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+        }
+
+        .forgot-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .forgot-container form input[type="email"],
+        .forgot-container form input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .forgot-container form input:focus {
+            outline: none;
+            border-color: #6a11cb;
+            box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+        }
+
+        .forgot-container .field-label {
+            margin: 10px 0 5px;
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .forgot-container form button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .forgot-container form button:hover {
+            background: linear-gradient(135deg, #2575fc, #6a11cb);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            nav .nav-buttons {
+                margin-top: 10px;
+            }
+
+            .forgot-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">SMShortner</div>
+        <div class="nav-buttons">
+            <a href="/login" class="login">Login</a>
+            <a href="/signin" class="signup">Signup</a>
+        </div>
+    </nav>
+    <div class="center-container">
+        <div class="forgot-container">
+            <h2>Forgot Password</h2>
+            <form action="/user/forgot" method="post">
+                <input type="email" name="email" placeholder="Email" required>
+                <div class="field-label">Enter Your BirthPlace</div>
+                <input type="text" name="Securityq" placeholder="Security Answer" required>
+                <button type="submit">UPDATE PASSWORD</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
